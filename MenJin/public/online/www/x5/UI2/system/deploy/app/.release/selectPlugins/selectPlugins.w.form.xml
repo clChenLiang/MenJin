@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" class="window" sysParam="false" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/select/checkboxGroup,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/button/button," css="">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"/>  
+  <div xid="modeDiv" style="padding-top:8px;padding-bottom:8px;">
+    <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="autoSelectPlugins" label="自动选择使用到的Cordova插件（源代码模式请手工选择插件，插件相关选项对服务器打包模式有效）" checked="true" data-config="{&quot;checked&quot;:true,&quot;disabled&quot;:false,&quot;label&quot;:&quot;自动选择使用到的Cordova插件（源代码模式请手工选择插件，插件相关选项对服务器打包模式有效）&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}" data-events="onChange:checkbox2Change">
+      <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></xhtml:input>
+      <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml">自动选择使用到的Cordova插件（源代码模式请手工选择插件，插件相关选项对服务器打包模式有效）</xhtml:label>
+    </span>
+  </div>
+  <div xid="pluginsDiv" style="display:none"> 
+    <div xid="buttonDiv" style="padding-top:8px;padding-bottom:16px">
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default" xid="btnSelectAll" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:btnSelectAllClick" data-config="{&quot;label&quot;:&quot;全选&quot;}"> 
+        <i xid="i1"/>  
+        <span xid="span1">全选</span>
+      </a>  
+      <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default" xid="btnCancelAll" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:btnCancelAllClick" data-config="{&quot;label&quot;:&quot;取消全择&quot;}"> 
+        <i xid="i2"/>  
+        <span xid="span2">取消全择</span>
+      </a> 
+    </div>
+    <div xid="pluginDiv" style="overflow-y:auto">
+      <span component="$model/UI2/system/components/justep/select/checkboxGroup" class="x-checkbox-group" xid="plugins" style="margin-top:8px;width:100%" bind-foreach="{data:pluginsData.datas,afterRender:$model.comp($element)['_doUpdate'].bind($model.comp($element))}" data-bind="component:{name:'$model/UI2/system/components/justep/select/checkboxGroup'}" data-config="{&quot;itemStyle&quot;:&quot;width:280px;margin:4px 0&quot;}">
+        <xhtml:span xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox',value:ref('id'),label:ref('name')}">
+          <xhtml:input type="checkbox"/>
+          <xhtml:label/>
+        </xhtml:span>
+      </span>
+    </div> 
+  </div> 
+</div>

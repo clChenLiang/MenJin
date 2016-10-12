@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" class="window container-fluid" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/radio,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/toolBar/toolBar,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar form-inline x-toolbar-spliter" xid="toolBar1" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}"> 
+    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-left" xid="add" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'data.new'}"> 
+      <i/>  
+      <span/> 
+    </a>  
+    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-left" xid="delete" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{operation:'data.delete'}"> 
+      <i/>  
+      <span/> 
+    </a>  
+    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-left" xid="up" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:upClick" data-config="{&quot;icon&quot;:&quot;icon-chevron-up&quot;,&quot;label&quot;:&quot;上移&quot;}"> 
+      <i class="icon-chevron-up"/>  
+      <span>上移</span> 
+    </a>  
+    <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-icon-left" xid="down" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:downClick" data-config="{&quot;icon&quot;:&quot;icon-chevron-down&quot;,&quot;label&quot;:&quot;下移&quot;}"> 
+      <i class="icon-chevron-down"/>  
+      <span>下移</span> 
+    </a> 
+  </div>  
+  <div xmlns="" component="$model/UI2/system/components/justep/list/list" class="x-list" xid="622EB53A03754502AB451896C0F2896E" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;data&quot;:&quot;data&quot;}"> 
+    <div component="$model/UI2/system/components/bootstrap/row/row" class="row" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}"> 
+      <div class="col col-xs-3"> 
+        <label xid="label1" data-bind="text:data.label('name')">label</label> 
+      </div>  
+      <div class="col col-xs-2"> 
+        <label xid="label2" data-bind="text:data.label('type')">label</label> 
+      </div>  
+      <div class="col col-xs-3"> 
+        <label xid="label3" data-bind="text:data.label('displayName')">label</label> 
+      </div>  
+      <div class="col col-xs-2"> 
+        <label xid="label4" data-bind="text:data.label('isCalculate')">label</label> 
+      </div>  
+      <div class="col col-xs-2"> 
+        <label xid="label5" data-bind="text:data.label('isIDColumn')">label</label> 
+      </div> 
+    </div>  
+    <div class="x-list-template hide" style="margin:0;" data-bind="foreach:{data:$model.foreach_622EB53A03754502AB451896C0F2896E($element),afterRender:$model.foreach_afterRender_622EB53A03754502AB451896C0F2896E.bind($model,$element)}"> 
+      <div component="$model/UI2/system/components/bootstrap/row/row" class="row" style="padding: 6px 0;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'},css:{'x-currentRow':$object==$model.data.getCurrentRow()}"> 
+        <div class="col col-xs-3"> 
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control" xid="input1" data-bind="component:{ref:ref('name'),name:'$model/UI2/system/components/justep/input/input'}"/> 
+        </div>  
+        <div class="col col-xs-2"> 
+          <select component="$model/UI2/system/components/justep/select/select" class="form-control" xid="select1" data-bind="component:{ref:ref('type'),name:'$model/UI2/system/components/justep/select/select'},options:$model.typeData.datas,optionsValue:'name',optionsAfterRender:$model.__justep__.selectOptionsAfterRender.bind($model,$element)"/> 
+        </div>  
+        <div class="col col-xs-3"> 
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control" xid="input3" data-bind="component:{ref:ref('displayName'),name:'$model/UI2/system/components/justep/input/input'}"/> 
+        </div>  
+        <div class="col col-xs-2"> 
+          <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="checkbox1" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{ref:ref('isCalculate'),name:'$model/UI2/system/components/justep/button/checkbox'}"> 
+            <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></input>  
+            <label xmlns:xhtml="http://www.w3.org/1999/xhtml"></label> 
+          </span> 
+        </div>  
+        <div class="col col-xs-2"> 
+          <span component="$model/UI2/system/components/justep/button/radio" class="x-radio" xid="radio1" name="idCol" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;name&quot;:&quot;idCol&quot;}" data-bind="component:{ref:ref('isIDColumn'),name:'$model/UI2/system/components/justep/button/radio'}"> 
+            <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="radio" name="idCol"></input>  
+            <label xmlns:xhtml="http://www.w3.org/1999/xhtml"></label> 
+          </span> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>

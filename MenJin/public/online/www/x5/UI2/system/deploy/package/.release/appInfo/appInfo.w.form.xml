@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" component="$model/UI2/system/components/justep/window/window" extends="$UI/system/deploy/common/appInfo.w" class="window" sysParam="false" xid="window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/windowDialog/windowDialog,$model/UI2/system/components/justep/textarea/textarea,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/output/output," css="">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"/>  
+  <span component="$model/UI2/system/components/justep/windowDialog/windowDialog" xid="windowDialog" style="left:51px;top:256px;" data-bind="component:{name:'$model/UI2/system/components/justep/windowDialog/windowDialog'}" data-config="{&quot;src&quot;:&quot;$model/UI2/system/deploy/common/waittingDialog.w&quot;}">
+    <xhtml:div class="x-dialog-overlay"/>
+    <xhtml:div class="x-dialog" style="display:none;">
+      <xhtml:div class="x-dialog-title">
+        <xhtml:button class="close">
+          <xhtml:span>×</xhtml:span>
+        </xhtml:button>
+        <xhtml:div class="x-dialog-title-text"/>
+      </xhtml:div>
+      <xhtml:div class="x-dialog-body"/>
+    </xhtml:div>
+  </span>
+  <div xid="appInfoDiv" style="padding:8px;"> 
+    <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelOutput2" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+      <label class="x-label" xid="label2">应用名：</label>  
+      <div component="$model/UI2/system/components/justep/output/output" class="x-output x-edit" xid="appName" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'}"/>
+    </div>  
+    <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelOutput3" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+      <label class="x-label" xid="label3">版本号：</label>  
+      <div component="$model/UI2/system/components/justep/output/output" class="x-output x-edit" xid="version" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'}"/>
+    </div>  
+    <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelOutput6" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+      <label class="x-label" xid="label6">应用包名：</label>  
+      <div component="$model/UI2/system/components/justep/output/output" class="x-output x-edit" xid="packageName" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'}"/>
+    </div>  
+    <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelOutput1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+      <label class="x-label" xid="label7">服务地址：</label>  
+      <div component="$model/UI2/system/components/justep/output/output" class="x-output x-edit" xid="serverURL" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'}"/>
+    </div>  
+    <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelOutput5" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+      <label class="x-label" xid="label5">首页：</label>  
+      <div component="$model/UI2/system/components/justep/output/output" class="x-output x-edit" xid="indexURL" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'}"/>
+    </div>
+    <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelOutput4" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+      <label class="x-label" xid="label4">包含UI资源：</label>  
+      <div component="$model/UI2/system/components/justep/output/output" class="x-output x-edit" xid="uiResDirs" data-bind="component:{name:'$model/UI2/system/components/justep/output/output'}"/>
+    </div>  
+    <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelTextarea1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+      <label class="x-label" xid="label1">本地插件：</label>  
+      <textarea component="$model/UI2/system/components/justep/textarea/textarea" class="form-control x-edit" xid="plugins" readonly="true" data-bind="component:{name:'$model/UI2/system/components/justep/textarea/textarea'}"/>
+    </div>  
+    <div xid="div2" style="padding-top:8px"> 
+      <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="extBrowser" label="Andorid使用增强型浏览器" checked="true" disabled="true" data-config="{&quot;checked&quot;:true,&quot;disabled&quot;:true,&quot;label&quot;:&quot;Andorid使用增强型浏览器&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}">
+        <xhtml:input type="checkbox"/>
+        <xhtml:label>Andorid使用增强型浏览器</xhtml:label>
+      </span>  
+      <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="resEncryption" label="资源加密" style="padding-left:16px" disabled="true" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:true,&quot;label&quot;:&quot;资源加密&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}">
+        <xhtml:input type="checkbox"/>
+        <xhtml:label>资源加密</xhtml:label>
+      </span>  
+      <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="sourceMode" label="源码模式" style="padding-left:16px" disabled="true" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:true,&quot;label&quot;:&quot;源码模式&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}">
+        <xhtml:input type="checkbox"/>
+        <xhtml:label>源码模式</xhtml:label>
+      </span>
+    </div> 
+  </div> 
+</div>

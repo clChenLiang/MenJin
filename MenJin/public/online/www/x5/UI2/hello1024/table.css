@@ -1,0 +1,30 @@
+caption{
+    padding:10px 0 5px 0;
+    width:550px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+}
+#theone{
+    width:230px;
+    height:183px;
+    background-color: aqua;
+
+}
+#test{
+    /*width:930px;*/
+    /*height:400px;*/
+    background-color:paleturquoise;
+
+}
+td{
+    border:1px solid black;
+    padding:6px 6px 6px 12px;
+
+    color:#4f6b72;
+    text-align: center;
+    width:500px;
+    height: 30px;
+
+}

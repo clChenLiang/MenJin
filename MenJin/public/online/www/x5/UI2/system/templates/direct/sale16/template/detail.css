@@ -1,0 +1,65 @@
+/*公共*********************************************************/
+*{ line-height:21px;}
+
+.del-line{ text-decoration:line-through;}
+.color-gray{ color:#999;}
+.color-orange{ color:#ff4400;}
+.color-green{ color:#098f02;}
+.margin-left{ margin-left:20px;}
+.padding-all{padding:10px;}
+.padding-lr{padding:0 10px;}
+.padding-l{padding-left:10px;}
+.float-r{ float:right;}
+.text-align{ text-align:center;}
+.font-weight{ font-weight:bold;}
+.block{ display:block;}
+
+.line-top{ border-top:1px solid #efefef;}
+
+.row{ margin:0; padding:0;}
+.row .col{ margin:0; padding:0;}
+
+/*分隔线*/
+.interval{ height:10px; background-color:#eee; border-top:1px solid #efefef; border-bottom:1px solid #dcdcdc;}
+
+/*商品标题*/
+.buyTitle{ font-size:16px; font-weight:bold;}
+
+/*选择颜色分类标题*/
+.chooseTitle{ line-height:45px; font-size:16px;}
+.chooseTitle .btn{ height:45px; color:#666; float:right;}
+
+
+/*顶部titlebar**********************************************/
+.x-titlebar{ background-color:#ff4400;}
+
+/*内容部分*****************************************************/
+.price{ font-size:20px; color:#ff4400; font-weight:bold;}
+
+/*评论*/
+.comments .img-circle{ width:30px; height:30px;}
+
+/*商家信息*/
+.shop .img-rounded{ width:90%;}
+.shop .btn{ border:1px solid #e1e1e1; border-radius:3px; color:#666;}
+.shop .indexdata{ padding:10px 0;}
+.shop .indexdata span:nth-child(2){ margin-right:50px;}
+.shop .number{ margin-bottom:10px; line-height:16px;}
+.shop .number span:first-child{ font-weight:bold;}
+.shop .line{ border-right:1px solid #e1e1e1;}
+.shop .row .col:nth-child(even) .btn{ float:right;}
+
+/*底部********************************************************/
+.x-panel-bottom .quick{ border-top:1px solid #d3d3d3; border-bottom:1px solid #d3d3d3;}
+.x-panel-bottom .quick .btn{ color:#666; padding:0; padding-top:3px;}
+.x-panel-bottom .quick .icon{ font-size:22;}
+.x-panel-bottom .quick .btn:nth-child(2){ border-left:1px solid #dcdcdc; border-right:1px solid #dcdcdc;}
+.x-panel-bottom .shopping .btn{ height:48px; margin:0; padding:0; border-radius:0; box-shadow:none; border:none; box-sizing:none; background:none; color:#fff;}
+.x-panel-bottom .shopping .btn:first-child{ background-color:#fe9100;}
+.x-panel-bottom .shopping .btn:last-child{ background-color:#fd5001;}
+
+
+
+
+
+

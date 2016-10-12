@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/row/row,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/input/input," css="$model/UI2/system/components/designerCommon/propEdtorPages/cssClassSelector/cssClassSelector.css,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"></div>  
+  <ul class=""> 
+    <li id="customized"> 
+      <div component="$model/UI2/system/components/justep/row/row" class="x-row x-responsive-md" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}"> 
+        <div class="x-col x-col-20">
+          <span class="title-here">其它</span>
+        </div>  
+        <div class="x-col"> 
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control" xid="otherInput" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}"/> 
+        </div> 
+      </div> 
+    </li> 
+  </ul> 
+</div>

@@ -1,0 +1,607 @@
+<?xml version="1.0"?>
+<project name="x5 app mananger">
+
+	<property name="justepHome" value="@justepHome@" />
+	<property name="antLibDir" value="@antLibDir@" />
+	<property name="nativeDir" value="@nativeDir@" />
+	<property name="templateDir" value="${nativeDir}/templates/normal" />
+	<property name="templateSourceDir" value="${nativeDir}/templates/advanced" />
+	<property name="session" value="@session@" />
+
+	<property name="userID" value="@userID@" />
+	<property name="appName" value="@appName@" />
+	<property name="sourceMode" value="@sourceMode@" />
+	<property name="version" value="@version@" />
+	<property name="packageName" value="@packageName@" />
+	<property name="serverURL" value="@serverURL@" />
+	<property name="indexURL" value="@indexURL@" />
+	<property name="uiResDirs" value="@uiResDirs@" />
+	<property name="extBrowser" value="@extBrowser@" />
+	<property name="autoSelectPlugins" value="@autoSelectPlugins@" />
+	<property name="plugins" value="@plugins@" />
+	<property name="resEncryption" value="@resEncryption@" />
+	<property name="mqttServerURL" value="@mqttServerURL@" />
+
+	<property name="platform" value="@platform@" />
+	<property name="compileUI" value="@compileUI@" />
+	<property name="useAppBuilderServer" value="@useAppBuilderServer@" />
+	<property name="appBuilderServer" value="@appBuilderServer@" />
+	<property name="realAppBuilderServer" value="@realAppBuilderServer@" />
+	<property name="releaseMode" value="@releaseMode@" />
+
+	<property name="oldAppName" value="@oldAppName@" />
+
+	<property name="targetDir" value="${nativeDir}/${appName}" />
+	<property file="${targetDir}/build.properties" />
+
+	<property name="usedPlugins" value="" />
+
+	<property name="buildWWWDir" value="${targetDir}/build/www" />
+	<property name="buildAndroidDir" value="${targetDir}/build/android" />
+	<property name="buildIOSDir" value="${targetDir}/build/ios" />
+	<property name="buildCordovaDir" value="${targetDir}/build" />
+
+	<property name="javaPath" value="@javaPath@" />
+	<property name="exe" value="@exe@" />
+
+	<path id="antClasspath">
+		<fileset dir="${antLibDir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	<typedef resource="com/justep/tools/ant/task/antlib.xml" classpathref="antClasspath" />
+
+	<target name="createApp" depends="makeAppDir, createProject, copyResources, copySource, updateProject, addPlugins, updateImage" />
+	<target name="editApp" depends="checkName, renameApp, createProject, updateProject, addPlugins, updateImage" />
+
+	<target name="makeAppDir">
+		<delete includeEmptyDirs="true">
+			<fileset dir="${targetDir}">
+				<exclude name="log/build.log" />
+			</fileset>
+		</delete>
+
+		<mkdir dir="${targetDir}" />
+	</target>
+
+	<target name="checkName">
+		<condition property="appNameChanged">
+			<not>
+				<equals arg1="${appName}" arg2="${oldAppName}" />
+			</not>
+		</condition>
+	</target>
+
+	<target name="renameApp" if="appNameChanged">
+		<delete includeEmptyDirs="true">
+			<fileset dir="${targetDir}">
+				<exclude name="log/build.log" />
+			</fileset>
+		</delete>
+
+		<move todir="${targetDir}">
+			<fileset dir="${nativeDir}/${oldAppName}">
+				<exclude name="log/build.log" />
+			</fileset>
+		</move>
+
+		<delete dir="${nativeDir}/${oldAppName}" />
+	</target>
+
+	<target name="createProject">
+		<copy file="${templateDir}/app.project" tofile="${targetDir}/app.project" overwrite="true" encoding="UTF-8">
+			<filterset>
+				<filter token="userID" value="${userID}" />
+				<filter token="appName" value="${appName}" />
+				<filter token="sourceMode" value="${sourceMode}" />
+				<filter token="version" value="${version}" />
+				<filter token="packageName" value="${packageName}" />
+				<filter token="serverURL" value="${serverURL}" />
+				<filter token="indexURL" value="${indexURL}" />
+				<filter token="uiResDirs" value="${uiResDirs}" />
+				<filter token="extBrowser" value="${extBrowser}" />
+				<filter token="autoSelectPlugins" value="${autoSelectPlugins}" />
+				<filter token="plugins" value="${plugins}" />
+				<filter token="resEncryption" value="${resEncryption}" />
+				<filter token="mqttServerURL" value="${mqttServerURL}" />
+			</filterset>
+		</copy>
+
+		<mkdir dir="${targetDir}/www" />
+	</target>
+
+	<target name="copyResources">
+		<copy todir="${targetDir}" overwrite="true">
+			<fileset dir="${templateDir}">
+				<exclude name="app.project" />
+				<exclude name="build.xml" />
+				<exclude name="x5*.*.t" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="copySource" if="${sourceMode}">
+		<copy todir="${targetDir}" overwrite="true">
+			<fileset dir="${templateSourceDir}" />
+		</copy>
+	</target>
+
+	<target name="updateProject" if="${sourceMode}">
+		<chmod dir="${targetDir}/platforms/android/cordova" perm="ugo+rx" includes="*" />
+		<chmod dir="${targetDir}/platforms/ios/cordova" perm="ugo+rx" includes="*" />
+		<chmod dir="${targetDir}/platforms/android/cordova" perm="ugo+rx" includes="**/*.sh" />
+		<chmod dir="${targetDir}/platforms/ios/cordova" perm="ugo+rx" includes="**/*.sh" />
+
+		<updateProject justepHome="${justepHome}" targetDir="${targetDir}" packageName="${packageName}" appName="${appName}" startURL="${serverURL}${indexURL}" version="${version}" extBrowser="${extBrowser}" >
+			<env key="NODE_PATH" value="${justepHome}/node" />
+			<env key="PATH" path="${justepHome}/node:${env.PATH}" />
+		</updateProject>
+	</target>
+
+	<target name="addPlugins" if="${sourceMode}">
+		<addPlugins justepHome="${justepHome}" targetDir="${targetDir}" plugins="${plugins}" >
+			<env key="NODE_PATH" value="${justepHome}/node" />
+			<env key="PATH" path="${justepHome}/node:${env.PATH}" />
+		</addPlugins>
+	</target>
+
+	<target name="updateImage" depends="updateNewImage, checkImageExist, updateIcon, updateSplash-land, updateSplash-port" />
+
+	<target name="updateNewImage">
+		<copy todir="${targetDir}" overwrite="true" failonerror="false" quiet="true">
+			<fileset dir="${nativeDir}/.workspace/${userID}">
+				<include name="icon.png" />
+				<include name="splash-land.png" />
+				<include name="splash-port.png" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="checkImageExist">
+		<available property="iconIsExist" file="${targetDir}/icon.png" />
+		<available property="splash-landIsExist" file="${targetDir}/splash-land.png" />
+		<available property="splash-portIsExist" file="${targetDir}/splash-port.png" />
+	</target>
+
+	<target name="updateIcon" if="iconIsExist">
+		<!-- android -->
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-ldpi" />
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="36x36!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-ldpi/icon.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-mdpi" />
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="48x48!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-mdpi/icon.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-hdpi" />
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="72x72!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-hdpi/icon.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-xhdpi" />
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="96x96!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-xhdpi/icon.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<copy file="${targetDir}/platforms/android/res/drawable-xhdpi/icon.png" tofile="${targetDir}/platforms/android/res/drawable/icon.png" overwrite="true" />
+
+		<!-- ios -->
+		<mkdir dir="${targetDir}/platforms/ios/X5/Resources/icons" />
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="40x40!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-40.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="80x80!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-40@2x.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="50x50!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-50.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="100x100!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-50@2x.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="60x60!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-60.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="120x120!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-60@2x.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="72x72!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-72.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="144x144!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-72@2x.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="76x76!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-76.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="152x152!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-76@2x.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="29x29!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-small.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="58x58!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon-small@2x.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="57x57!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/icon.png" />
+			<arg value="-resize" />
+			<arg value="114x114!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/icons/icon@2x.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+	</target>
+
+	<target name="updateSplash-land" if="splash-landIsExist">
+		<!-- android -->
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-land-ldpi" />
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-land.png" />
+			<arg value="-resize" />
+			<arg value="320x240!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-land-ldpi/screen.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-land-mdpi" />
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-land.png" />
+			<arg value="-resize" />
+			<arg value="480x320!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-land-mdpi/screen.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-land-hdpi" />
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-land.png" />
+			<arg value="-resize" />
+			<arg value="800x480!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-land-hdpi/screen.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-land-xhdpi" />
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-land.png" />
+			<arg value="-resize" />
+			<arg value="1280x720!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-land-xhdpi/screen.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<!-- ios -->
+		<mkdir dir="${targetDir}/platforms/ios/X5/Resources/splash" />
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-land.png" />
+			<arg value="-resize" />
+			<arg value="1024x768!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/splash/Default-Landscape~ipad.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+	</target>
+
+	<target name="updateSplash-port" if="splash-portIsExist">
+		<!-- android -->
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-port-ldpi" />
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-port.png" />
+			<arg value="-resize" />
+			<arg value="240x320!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-port-ldpi/screen.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-port-mdpi" />
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-port.png" />
+			<arg value="-resize" />
+			<arg value="320x480!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-port-mdpi/screen.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-port-hdpi" />
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-port.png" />
+			<arg value="-resize" />
+			<arg value="480x800!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-port-hdpi/screen.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<mkdir dir="${targetDir}/platforms/android/res/drawable-port-xhdpi" />
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-port.png" />
+			<arg value="-resize" />
+			<arg value="720x1280!" />
+			<arg value="${targetDir}/platforms/android/res/drawable-port-xhdpi/screen.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<!-- ios -->
+		<mkdir dir="${targetDir}/platforms/ios/X5/Resources/splash" />
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-port.png" />
+			<arg value="-resize" />
+			<arg value="640x1136!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/splash/Default-568h@2x~iphone.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-port.png" />
+			<arg value="-resize" />
+			<arg value="640x960!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/splash/Default@2x~iphone.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-port.png" />
+			<arg value="-resize" />
+			<arg value="768x1024!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/splash/Default-Portrait~ipad.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+
+		<exec executable="${antLibDir}/convert${exe}" failonerror="true">
+			<arg value="${targetDir}/splash-port.png" />
+			<arg value="-resize" />
+			<arg value="320x480!" />
+			<arg value="${targetDir}/platforms/ios/X5/Resources/splash/Default~iphone.png" />
+			<env key="DYLD_LIBRARY_PATH" value="${antLibDir}" />
+		</exec>
+	</target>
+
+	<target name="compileUI">
+		<delete dir="${targetDir}/www" />
+		<mkdir dir="${targetDir}/www" />
+
+		<compileUI justepHome="${justepHome}" dirs="${uiResDirs}" targetDir="${targetDir}/www" indexURL="${indexURL}" usedPlugins="usedPlugins" />
+
+		<propertyfile file="${targetDir}/build.properties">
+			<entry key="usedPlugins" value="${usedPlugins}" />
+		</propertyfile>
+	</target>
+
+	<target name="processWWW">
+		<delete dir="${buildWWWDir}" />
+		<mkdir dir="${buildWWWDir}" />
+
+		<processWWW dir="${targetDir}/www" targetDir="${buildWWWDir}" resEncryption="${resEncryption}" />
+
+		<propertyfile file="${targetDir}/build.properties">
+			<entry key="resPassword" value="${resPassword}" />
+		</propertyfile>
+	</target>
+
+	<target name="packAndroid">
+		<mkdir dir="${targetDir}/dist" />
+		<delete dir="${buildAndroidDir}" />
+		<mkdir dir="${buildAndroidDir}" />
+		<delete file="${targetDir}/dist/${appName}.apk" />
+
+		<condition property="tmpl.apk.name" value="x5.apk.t" else="x5-std.apk.t">
+			<equals arg1="${extBrowser}" arg2="true" />
+		</condition>
+
+		<java jar="${antLibDir}/apktool.jar" fork="true" failonerror="true" maxmemory="128m">
+			<arg value="d" />
+			<arg value="-f" />
+			<arg value="-p" />
+			<arg value="${buildAndroidDir}/framework" />
+			<arg value="-o" />
+			<arg value="${buildAndroidDir}/x5" />
+			<arg value="${templateDir}/${tmpl.apk.name}" />
+		</java>
+
+		<copy todir="${buildAndroidDir}/x5/res" overwrite="true">
+			<fileset dir="${targetDir}/platforms/android/res" />
+		</copy>
+
+		<mkdir dir="${buildAndroidDir}/x5/assets/www" />
+		<delete file="${buildAndroidDir}/x5/assets/www/index.html" />
+		<copy todir="${buildAndroidDir}/x5/assets/www" overwrite="true">
+			<fileset dir="${buildWWWDir}" />
+		</copy>
+
+		<apk appPath="${buildAndroidDir}/x5" appName="${appName}" version="${version}" packageName="${packageName}" startURL="${serverURL}${indexURL}" />
+
+		<java jar="${antLibDir}/apktool.jar" fork="true" failonerror="true" maxmemory="128m">
+			<arg value="b" />
+			<arg value="-f" />
+			<arg value="-p" />
+			<arg value="${buildAndroidDir}/framework" />
+			<arg value="-o" />
+			<arg value="${buildAndroidDir}/x5.apk" />
+			<arg value="${buildAndroidDir}/x5" />
+		</java>
+
+		<exec executable="${justepHome}/java/${javaPath}/bin/jarsigner${exe}" failonerror="true">
+			<arg value="-digestalg" />
+			<arg value="SHA1" />
+			<arg value="-sigalg" />
+			<arg value="MD5withRSA" />
+			<arg value="-verbose" />
+			<arg value="-storepass" />
+			<arg value="${androidKeyStorePassword}" />
+			<arg value="-keystore" />
+			<arg value="${targetDir}/android.keystore" />
+			<arg value="${buildAndroidDir}/x5.apk" />
+			<arg value="${androidKeyAlias}" />
+		</exec>
+
+		<exec executable="${antLibDir}/zipalign${exe}" failonerror="true">
+			<arg value="-v" />
+			<arg value="4" />
+			<arg value="${buildAndroidDir}/x5.apk" />
+			<arg value="${targetDir}/dist/${appName}.apk" />
+		</exec>
+
+		<delete dir="${buildAndroidDir}" />
+	</target>
+
+	<target name="packIOS">
+		<mkdir dir="${targetDir}/dist" />
+		<delete dir="${buildIOSDir}" />
+		<mkdir dir="${buildIOSDir}" />
+		<delete file="${targetDir}/dist/${appName}.ipa" />
+
+		<unzip src="${templateDir}/x5.ipa.t" dest="${buildIOSDir}" overwrite="true" encoding="UTF-8" />
+
+		<copy todir="${buildIOSDir}/Payload/WeX5.app" overwrite="true">
+			<fileset dir="${targetDir}/platforms/ios/X5/Resources/icons" />
+			<fileset dir="${targetDir}/platforms/ios/X5/Resources/splash/" />
+		</copy>
+
+		<property name="appDir" value="${buildIOSDir}/Payload/WeX5.app" />
+		<mkdir dir="${appDir}/www" />
+		<delete file="${appDir}/www/index.html" />
+		<copy todir="${appDir}/www" overwrite="true">
+			<fileset dir="${targetDir}/build/www" />
+		</copy>
+
+		<ipa appPath="${appDir}" appName="${appName}" version="${version}" packageName="${packageName}" startURL="${serverURL}${indexURL}" />
+
+		<zip destfile="${targetDir}/dist/${appName}.ipa" encoding="UTF-8">
+			<fileset dir="${buildIOSDir}" />
+		</zip>
+
+		<delete dir="${buildIOSDir}" />
+	</target>
+
+	<target name="packUseAppBuilderServer">
+		<mkdir dir="${targetDir}/dist" />
+		<delete file="${targetDir}/build/x5.zip" />
+
+		<zip destfile="${targetDir}/build/x5.zip" encoding="UTF-8">
+			<fileset dir="${targetDir}">
+				<exclude name="build.xml" />
+				<exclude name="dist/" />
+				<exclude name="build/" />
+				<exclude name="log/" />
+				<exclude name="www/" />
+				<exclude name="*.txt" />
+			</fileset>
+			<fileset dir="${targetDir}/build">
+				<include name="www/" />
+			</fileset>
+		</zip>
+
+		<upload userID="${userID}" file="${targetDir}/build/x5.zip" appBuilderServer="${appBuilderServer}" realAppBuilderServer="${realAppBuilderServer}" session="${session}" justepHome="${justepHome}" workDir="${buildCordovaDir}" />
+
+		<pack userID="${userID}" appName="${appName}" platform="${platform}" sourceMode="${sourceMode}" appBuilderServer="${appBuilderServer}" realAppBuilderServer="${realAppBuilderServer}" session="${session}" justepHome="${justepHome}" workDir="${buildCordovaDir}" />
+
+		<download userID="${userID}" appBuilderServer="${appBuilderServer}" realAppBuilderServer="${realAppBuilderServer}" dir="${targetDir}/dist" justepHome="${justepHome}" workDir="${buildCordovaDir}" />
+
+		<delete dir="${targetDir}/build/x5.zip" />
+	</target>
+
+	<target name="unZipAppBuilderServerPackage">
+		<unzip src="${targetDir}/dist/x5.zip" dest="${targetDir}/dist" overwrite="true" encoding="UTF-8" />
+
+		<delete file="${targetDir}/dist/x5.zip" />
+	</target>
+
+	<target name="saveLastPackConfig">
+		<propertyfile file="${targetDir}/build.properties">
+			<entry key="platform" value="${platform}" />
+			<entry key="compileUI" value="${compileUI}" />
+			<entry key="useAppBuilderServer" value="${useAppBuilderServer}" />
+			<entry key="appBuilderServer" value="${appBuilderServer}" />
+			<entry key="releaseMode" value="${releaseMode}" />
+		</propertyfile>
+	</target>
+
+</project>

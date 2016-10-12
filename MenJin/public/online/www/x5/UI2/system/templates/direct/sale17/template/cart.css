@@ -1,0 +1,53 @@
+/*公共*********************************************************/
+.del-line{ text-decoration:line-through;}
+.color-gray{ color:#999;}
+.color-orange{ color:#fe5300;}
+.margin-left{ margin-left:20px;}
+.float-r{ float:right;}
+.text-align{ text-align:center;}
+
+/**/
+.x-list, .x-list .x-list-template{ margin:0;}
+.row{ margin:0; padding:0;}
+.row .col{ margin:0; padding:0;}
+
+/*顶部titlebar**********************************************/
+.x-titlebar{ background-color:#ff4400;}
+
+
+/*内容部分******************************************** margin-left:0; margin-right:0;*********/
+.x-panel-content{ background-color:#eee;}
+/*店*/
+.shopList .box{ margin-bottom:10px; border-top:1px solid #dcdcdc; border-bottom:3px solid #dcdcdc;}
+.shop .col{ height:38px; line-height:38px; background-color:#fff;}
+.shop .col img{ width:20px; height:20px;}
+.shop .col .btn{ color:#666;}
+.shop .col span{ font-weight:bold;}
+
+/*商品*/
+.goodsList{ background-color:#fff;}
+.goods{ margin-bottom:5px;}
+.goods:last-child{ margin-bottom:0px;}
+.goods .col{ height:110px; padding:5px 0; font-size:12px; background-color:#fafafa;}
+.goods .col img{ height:100px;}
+.goods .col .title{ height:30px; margin-bottom:4px; font-weight:bold; line-height:15px;}
+.goods .col .price{ font-weight:bold; color:#fe5300; font-weight:bold; margin-right:50px;}
+.goods .col .more{ padding-right:3px; font-size:14px; float:right; bottom:0;}
+
+/*数量*/
+.numberOperation{ bottom:0;}
+.numberOperation .btn{ width:50px; color:#666; background-color:#efefef; border-radius:3px; box-shadow:none; float:left;}
+.numberOperation .btn:first-child{ margin-right:5px;}
+
+
+/*底部********************************************************/
+
+/*结算*/
+.x-panel-bottom{ background-color:#f5f5f5; border-top:1px solid #ddd;}
+.x-panel-bottom .row .col:nth-child(2){ text-align:right;}
+.x-panel-bottom .row .col:nth-child(2) div{ line-height:28px; padding-right:10px;}
+.x-panel-bottom .row .col:nth-child(2) div:nth-child(1){ font-size:16px;}
+.x-panel-bottom .row .col:nth-child(2) div:nth-child(2){ line-height:20px; font-size:12px; color:#999;}
+.x-panel-bottom .row .col:first-child .x-checkbox{ padding:10px 0 0 5px;}
+.x-panel-bottom .row .settlement{ height:48px; line-height:48px; text-align:center; background-color:#fd5001; color:#fff; font-size:16px; font-weight:bold;}
+

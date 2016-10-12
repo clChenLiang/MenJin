@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" class="window" sysParam="false" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/input/input," css="">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"/>  
+  <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelInput2" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+    <label class="x-label" xid="label2">版本号：</label>  
+    <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit" xid="version" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;例：5.3.0，由点隔开的三部分构成&quot;}"/>
+  </div>  
+  <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelInput3" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+    <label class="x-label" xid="label3">应用包名：</label>  
+    <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit" xid="packageName" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;例：com.justep.x5， ios的包名需要与证书中的BundleID一致&quot;}"/>
+  </div>
+  <div xid="div2" style="padding-top:8px">
+    <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="extBrowser" label="增强型浏览器（基于Crosswalk，Andorid平台有效），使用更快速和更强的浏览器引擎，但生成的本地App文件会更大（多16MB），建议Android4.4以下版本的设备使用" checked="false" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;增强型浏览器（基于Crosswalk，Andorid平台有效），使用更快速和更强的浏览器引擎，但生成的本地App文件会更大（多16MB），建议Android4.4以下版本的设备使用&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}">
+      <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></xhtml:input>
+      <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml">增强型浏览器（基于Crosswalk，Andorid平台有效），使用更快速和更强的浏览器引擎，但生成的本地App文件会更大（多16MB），建议Android4.4以下版本的设备使用</xhtml:label>
+    </span>
+  </div>  
+  <div xid="div1" style="padding-top:8px"> 
+    <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="resEncryption" label="打包的资源进行加密（服务器打包模式有效），加密后应用运行将略多一点资源读取时间，但可以增强应用的安全性，使反编译无法直接获取资源" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;打包的资源进行加密（服务器打包模式有效），加密后应用运行将略多一点资源读取时间，但可以增强应用的安全性，使反编译无法直接获取资源&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}">
+      <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></xhtml:input>
+      <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml">打包的资源进行加密（服务器打包模式有效），加密后应用运行将略多一点资源读取时间，但可以增强应用的安全性，使反编译无法直接获取资源</xhtml:label>
+    </span>
+  </div>  
+  <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelInput1" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+    <label class="x-label" xid="label1">推送服务地址：</label>  
+    <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit" xid="mqttServerURL" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;例：tcp://ip:port， android平台有效。注意需要选择推送插件&quot;}"/>
+  </div>  
+  <div xid="div3" style="padding-top:8px"> 
+    <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="sourceMode" label="源代码模式（服务器打包模式有效），本地应用将带所有源代码，可以自己手工通过Xcode或者ADT编译，也可以修改源代码后由服务器打包。本模式提供最大的修改灵活性，自动选择插件选项将失效，请手工选择插件" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;源代码模式（服务器打包模式有效），本地应用将带所有源代码，可以自己手工通过Xcode或者ADT编译，也可以修改源代码后由服务器打包。本模式提供最大的修改灵活性，自动选择插件选项将失效，请手工选择插件&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}">
+      <xhtml:input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></xhtml:input>
+      <xhtml:label xmlns:xhtml="http://www.w3.org/1999/xhtml">源代码模式（服务器打包模式有效），本地应用将带所有源代码，可以自己手工通过Xcode或者ADT编译，也可以修改源代码后由服务器打包。本模式提供最大的修改灵活性，自动选择插件选项将失效，请手工选择插件</xhtml:label>
+    </span>
+  </div>
+</div>

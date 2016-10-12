@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<div xid="window" class="window" component="$model/UI2/system/components/justep/window/window" design="device:mobile" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/row/row,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/scrollView/scrollView,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/output/output,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p66e7cce87cdc4986817959469b42c769-iosstatusbar" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}"> 
+    <div class="x-panel-top" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}">
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar" xid="titleBar1" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&#34;title&#34;:&#34;列表页&#34;}"> 
+        <div class="x-titlebar-left" xid="div1"></div>  
+        <div class="x-titlebar-title" xid="div2">列表页</div>  
+        <div class="x-titlebar-right " xid="div3">
+          <div class="empty"></div>
+        </div>
+      </div>
+    </div>  
+    <div class="x-panel-content xui-hignlight-selected x-scroll-view" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}">
+      <div class="x-scroll" component="$model/UI2/system/components/justep/scrollView/scrollView" xid="scrollView1" data-bind="component:{name:'$model/UI2/system/components/justep/scrollView/scrollView'}"> 
+        <div class="x-content-center x-pull-down container" xid="div4"> 
+          <i class="x-pull-down-img glyphicon x-icon-pull-down" xid="i1"></i>  
+          <span class="x-pull-down-label" xid="span1">下拉刷新...</span>
+        </div>  
+        <div class="x-scroll-content" xid="div5">
+          <div component="$model/UI2/system/components/justep/list/list" class="x-list" xid="list1" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&#34;data&#34;:&#34;data1&#34;}"> 
+            <ul class="x-list-template hide" xid="listTemplateUl1" data-bind="foreach:{data:$model.foreach_list1($element),afterRender:$model.foreach_afterRender_list1.bind($model,$element)}"> 
+              <li xid="li1">
+                <div component="$model/UI2/system/components/justep/row/row" class="x-row" xid="row1" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}"> 
+                  <div class="x-col" xid="col1">
+                    <div component="$model/UI2/system/components/justep/output/output" class="x-output" xid="output1" data-bind="component:{ref:ref('fName'),name:'$model/UI2/system/components/justep/output/output'}"></div>
+                  </div>  
+                  <div class="x-col" xid="col2">
+                    <div component="$model/UI2/system/components/justep/output/output" class="x-output" xid="output2" data-bind="component:{ref:ref('fPrice'),name:'$model/UI2/system/components/justep/output/output'}"></div>
+                  </div>  
+                  <div class="x-col" xid="col3">
+                    <div component="$model/UI2/system/components/justep/output/output" class="x-output" xid="output3" data-bind="component:{ref:ref('fDescription'),name:'$model/UI2/system/components/justep/output/output'}"></div>
+                  </div>
+                </div>
+              </li>
+            </ul> 
+          </div>
+        </div>  
+        <div class="x-content-center x-pull-up" xid="div6"> 
+          <span class="x-pull-up-label" xid="span2">加载更多...</span>
+        </div> 
+      </div>
+    </div>  
+    <div class="x-panel-bottom" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}"></div>
+    <style>.x-panel.p66e7cce87cdc4986817959469b42c769-iosstatusbar >.x-panel-top {height: 48px;}.x-panel.p66e7cce87cdc4986817959469b42c769-iosstatusbar >.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p66e7cce87cdc4986817959469b42c769-iosstatusbar >.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p66e7cce87cdc4986817959469b42c769-iosstatusbar >.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p66e7cce87cdc4986817959469b42c769-iosstatusbar >.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p66e7cce87cdc4986817959469b42c769-iosstatusbar >.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p66e7cce87cdc4986817959469b42c769-iosstatusbar >.x-panel-content {top: 48px;}</style>
+  </div>
+</div>

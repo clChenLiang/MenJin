@@ -1,0 +1,15 @@
+{
+	"userID" : "C6DE90EB18200001CAD01BEA8120CB40",
+	"appName" : "online",
+	"sourceMode" : true,
+	"version" : "0.0.2",
+	"packageName" : "com.justep.x5.hello1204",
+	"serverURL" : "http://10.22.182.185:3000",
+	"indexURL" : "/x5/UI2/hello1204/guanli.w",
+	"uiResDirs" : "hello1204",
+	"extBrowser" : true,
+	"autoSelectPlugins" : true,
+	"plugins" : "自动选择",
+	"resEncryption" : false,
+	"mqttServerURL" : ""
+}

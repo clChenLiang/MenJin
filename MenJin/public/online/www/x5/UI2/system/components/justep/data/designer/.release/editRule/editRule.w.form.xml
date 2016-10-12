@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" class="window container-fluid" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/dataTables/dataTables,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,$model/UI2/system/components/justep/toolBar/toolBar," css="">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"></div>  
+  <div component="$model/UI2/system/components/justep/toolBar/toolBar" class="x-toolbar x-toolbar-spliter" data-bind="component:{name:'$model/UI2/system/components/justep/toolBar/toolBar'}"> 
+    <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelEdit1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+      <label class="x-label" xid="label1">Data只读：</label>  
+      <div class="x-edit" xid="div1"> 
+        <div class="input-group"> 
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control" xid="dataReadonly" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;只读表达式&quot;}"/>  
+          <span class="input-group-btn"> 
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default" xid="dataReadonlyExpr" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:dataReadonlyExprClick" data-config="{&quot;label&quot;:&quot;设置&quot;}"> 
+              <i/>  
+              <span>设置</span> 
+            </a> 
+          </span> 
+        </div> 
+      </div> 
+    </div> 
+  </div>  
+  <div component="$model/UI2/system/components/bootstrap/row/row" class="row" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}"> 
+    <div class="col col-xs-6 col-spliter-right" style="overflow: auto;height:400px;"> 
+      <xhtml:table xmlns:xhtml="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/dataTables/dataTables" flexibleWidth="true" rowActiveClass="active" class="table table-hover table-striped" xid="dataTables1" data="data" data-config="{&quot;columns&quot;:[{&quot;orderable&quot;:false,&quot;sName&quot;:&quot;name&quot;,&quot;xid&quot;:&quot;column10&quot;},{&quot;orderable&quot;:false,&quot;sName&quot;:&quot;displayName&quot;,&quot;xid&quot;:&quot;column11&quot;}],&quot;data&quot;:&quot;data&quot;,&quot;flexibleWidth&quot;:true,&quot;rowActiveClass&quot;:&quot;active&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/dataTables/dataTables'}"></xhtml:table> 
+    </div>  
+    <div class="col col-xs-6"> 
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+        <label class="x-label">只读：</label>  
+        <div class="x-edit"> 
+          <div class="input-group"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control" xid="readonly" data-bind="component:{ref:data.ref('readonly'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;只读表达式&quot;}"/>  
+            <span class="input-group-btn"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default" xid="readonlyExpr" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:readonlyExprClick" data-config="{&quot;label&quot;:&quot;设置&quot;}"> 
+                <i/>  
+                <span>设置</span> 
+              </a> 
+            </span> 
+          </div> 
+        </div> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+        <label class="x-label">计算：</label>  
+        <div class="x-edit"> 
+          <div class="input-group"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control" xid="calculate" data-bind="component:{ref:data.ref('calculate'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;计算表达式&quot;}"/>  
+            <span class="input-group-btn"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default" xid="calculateExpr" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:calculateExprClick" data-config="{&quot;label&quot;:&quot;设置&quot;}"> 
+                <i/>  
+                <span>设置</span> 
+              </a> 
+            </span> 
+          </div> 
+        </div> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+        <label class="x-label">必填：</label>  
+        <div class="x-edit"> 
+          <div class="input-group"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control" xid="required" data-bind="component:{ref:data.ref('required'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;必填规则表达式&quot;}"/>  
+            <span class="input-group-btn"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default" xid="requiredExpr" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:requiredExprClick" data-config="{&quot;label&quot;:&quot;设置&quot;}"> 
+                <i/>  
+                <span>设置</span> 
+              </a> 
+            </span> 
+          </div> 
+        </div> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+        <label class="x-label"/>  
+        <div class="x-edit"> 
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control" xid="required_message" data-bind="component:{ref:data.ref('requiredMessage'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;必填规则提示信息&quot;}"/> 
+        </div> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+        <label class="x-label">约束：</label>  
+        <div class="x-edit"> 
+          <div class="input-group"> 
+            <input component="$model/UI2/system/components/justep/input/input" class="form-control" xid="constraint" data-bind="component:{ref:data.ref('constraint'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;约束规则表达式&quot;}"/>  
+            <span class="input-group-btn"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default" xid="constraintExpr" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:constraintExprClick" data-config="{&quot;label&quot;:&quot;设置&quot;}"> 
+                <i/>  
+                <span>设置</span> 
+              </a> 
+            </span> 
+          </div> 
+        </div> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+        <label class="x-label"/>  
+        <div class="x-edit"> 
+          <input component="$model/UI2/system/components/justep/input/input" class="form-control" xid="constraint_message" data-bind="component:{ref:data.ref('constraintMessage'),name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;约束规则提示信息&quot;}"/> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>

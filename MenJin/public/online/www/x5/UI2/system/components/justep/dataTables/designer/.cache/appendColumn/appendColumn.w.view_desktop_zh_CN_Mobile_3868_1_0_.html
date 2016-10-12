@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/controlGroup/controlGroup,$model/UI2/system/components/bootstrap/table/table,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/fragment/list/listTable,$model/UI2/system/components/justep/output/output,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/controlGroup/controlGroup" class="x-control-group" data-bind="component:{name:'$model/UI2/system/components/justep/controlGroup/controlGroup'}"> 
+    <div component="$model/UI2/system/components/fragment/list/listTable" data="data" masterData="" masterCol="" xid="listTable1" data-bind="component:{name:'$model/UI2/system/components/fragment/list/listTable'}"> 
+      <div component="$model/UI2/system/components/justep/list/list" class="x-list" xid="list1" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}" data-config="{&quot;data&quot;:&quot;data&quot;}"> 
+        <table class="table table-condensed table-hover table-striped" component="$model/UI2/system/components/bootstrap/table/table" xid="table1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/table/table'}"> 
+          <thead xid="thead1"> 
+            <tr xid="tr1"> 
+              <th xid="col4" style="text-align:center;"> 
+                <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="checkbox2" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}" data-events="onChange:checkbox2Change"> 
+                  <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></input>  
+                  <label xmlns:xhtml="http://www.w3.org/1999/xhtml"></label> 
+                </span> 
+              </th>  
+              <th xid="col1"> 
+                <label xid="label1" data-bind="text:$model.data.label('name')"/> 
+              </th>  
+              <th xid="col3"> 
+                <label xid="label3" data-bind="text:$model.data.label('displayName')"/> 
+              </th>  
+              <th xid="col2"> 
+                <label xid="label2" data-bind="text:$model.data.label('type')"/> 
+              </th> 
+            </tr> 
+          </thead>  
+          <tbody class="x-list-template hide" xid="listTemplate1" data-bind="foreach:{data:$model.foreach_list1($element),afterRender:$model.foreach_afterRender_list1.bind($model,$element)},event:{click:$model!=$object?$object.data.to($object):null}"> 
+            <tr xid="tr2"> 
+              <td xid="td4" style="text-align:center;"> 
+                <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="checkbox1" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{ref:ref('selected'),name:'$model/UI2/system/components/justep/button/checkbox'}"> 
+                  <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></input>  
+                  <label xmlns:xhtml="http://www.w3.org/1999/xhtml"></label> 
+                </span> 
+              </td>  
+              <td xid="td1"> 
+                <div component="$model/UI2/system/components/justep/output/output" class="x-output" xid="output1" data-bind="component:{ref:ref('name'),name:'$model/UI2/system/components/justep/output/output'}"/> 
+              </td>  
+              <td xid="td3"> 
+                <div component="$model/UI2/system/components/justep/output/output" class="x-output" xid="output3" data-bind="component:{ref:ref('displayName'),name:'$model/UI2/system/components/justep/output/output'}"/> 
+              </td>  
+              <td xid="td2"> 
+                <div component="$model/UI2/system/components/justep/output/output" class="x-output" xid="output2" data-bind="component:{ref:ref('type'),name:'$model/UI2/system/components/justep/output/output'}"/> 
+              </td> 
+            </tr> 
+          </tbody> 
+        </table> 
+      </div> 
+    </div> 
+  </div> 
+</div>

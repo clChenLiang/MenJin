@@ -1,0 +1,31 @@
+/**
+	@name Shell
+	@url $UI/system/lib/portal/shell
+	@class
+	@category javascript
+	@model UI2
+	@description shell API
+*/
+
+/**
+	@name Shell#loadPage
+	@function
+	@description 加载页面
+	@param {JSON} params 类似  {url:"$UI/portal/index.w"}
+	@returns {Promise}
+*/
+
+/**
+	@name Shell#showPage
+	@function
+	@description 显示页面
+	@param {JSON} params params 类似  {url:"$UI/portal/index.w"}
+	@returns {Promise}
+*/
+
+/**
+	@name Shell#closePage
+	@function
+	@description 关闭当前页面
+	@returns {void}
+*/

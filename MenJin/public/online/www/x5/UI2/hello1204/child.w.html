@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<div xid="window" class="window" component="$model/UI2/system/components/justep/window/window" design="device:pc" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/row/row,$model/UI2/system/components/fragment/list/listRow4,$model/UI2/system/components/justep/panel/panel,$model/UI2/system/components/justep/panel/child,$model/UI2/system/components/justep/list/list,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/bootstrap/row/row,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/titleBar/titleBar,$model/UI2/system/components/justep/button/button,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"></div>  
+  <div component="$model/UI2/system/components/justep/panel/panel" class="x-panel x-full p6a805c95602e440494b3a25e4b78a309-iosstatusbar" xid="panel1" data-bind="component:{name:'$model/UI2/system/components/justep/panel/panel'}"> 
+    <div class="x-panel-top" xid="top1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}">
+      <div component="$model/UI2/system/components/justep/titleBar/titleBar" class="x-titlebar" xid="titleBar1" style="color:#FFFFFF;background-color:#804040;font-size:x-large;font-style:inherit;" data-bind="component:{name:'$model/UI2/system/components/justep/titleBar/titleBar'}" data-config="{&#34;title&#34;:&#34;客流量统计系统后台配置&#34;}"> 
+        <div class="x-titlebar-left" xid="div1"></div>  
+        <div class="x-titlebar-title" xid="div2">客流量统计系统后台配置</div>  
+        <div class="x-titlebar-right " xid="div3">
+          <div class="empty"></div>
+        </div>
+      </div>
+    </div>  
+    <div class="x-panel-content" xid="content1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}">
+      <div component="$model/UI2/system/components/bootstrap/row/row" class="row" xid="row1" style="height:106px;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}"> 
+        <div class="col col-xs-4" xid="col1"></div>  
+        <div class="col col-xs-4" xid="col2"></div>  
+        <div class="col col-xs-4" xid="col3"></div>
+      </div>  
+      <div xid="div4" style="height:323px;">
+        <div component="$model/UI2/system/components/bootstrap/row/row" class="row" xid="row2" style="height:54px;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}"> 
+          <div class="col col-xs-4" xid="col4"></div>  
+          <div class="col col-xs-2" xid="col5">
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link" xid="button5" style="width:94px;font-size:x-large;color:#002060;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&#34;label&#34;:&#34;门店配置&#34;}"> 
+              <i xid="i5"></i>  
+              <span xid="span6">门店配置</span>
+            </a>
+          </div>  
+          <div class="col col-xs-1" xid="col6">
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link" xid="button6" style="color:#002060;width:94px;font-size:x-large;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&#34;label&#34;:&#34;店名&#34;}"> 
+              <i xid="i6"></i>  
+              <span xid="span7">店名</span>
+            </a>
+          </div>  
+          <div class="col col-xs-1" xid="col7">
+            <a component="$model/UI2/system/components/justep/button/button" class="btn btn-link" xid="button7" style="color:#002060;width:94px;font-size:x-large;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&#34;label&#34;:&#34;通道数量&#34;}"> 
+              <i xid="i7"></i>  
+              <span xid="span8">通道数量</span>
+            </a>
+          </div>
+        </div>  
+        <div component="$model/UI2/system/components/bootstrap/row/row" class="row" xid="row5" style="height:57px;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}"> 
+          <div class="col col-xs-4" xid="col16"></div>  
+          <div class="col col-xs-2" xid="col15"></div>  
+          <div class="col col-xs-1" xid="col18" style="width:9%;"> 
+            <input type="text" value="" xid="input7" style="height:37px;width:116px;" placeholder="请在此输入店名">
+          </div>  
+          <div class="col col-xs-1" xid="col17"> 
+            <input type="text" value="" xid="input8" placeholder="请输入通道数量" style="height:37px;width:116px;left:..;">
+          </div> 
+        </div>  
+        <div component="$model/UI2/system/components/bootstrap/row/row" class="row" xid="row3" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}"> 
+          <div class="col col-xs-4" xid="col8" style="width:47%;"></div>  
+          <div class="col col-xs-6" xid="col9" id="col9"> 
+            <table width="600px" cellpadding="3" cellspacing="0" id="myTab"> 
+              <tr style="width:100%;"> 
+                <td width="40px" class="top-bt liebiao-c" align="center" style="font-size:x-large;color:#002060;width:30%;">操作</td>  
+                <td width="60px" class="top-bt liebiao-c" align="center" style="font-size:x-large;color:#002060;width:30%;background-color:transparent;">店名</td>  
+                <td width="60px" class="top-bt liebiao-c" align="center" style="font-size:x-large;color:#002060;width:30%;">通道数量</td> 
+              </tr> 
+            </table> 
+          </div>  
+          <div class="col col-xs-2" xid="col10" style="float:left;display:block;width:5%;"></div>
+        </div>
+        <div component="$model/UI2/system/components/bootstrap/row/row" class="row" xid="row11" style="height:54px;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}"> 
+          <div class="col col-xs-4" xid="col40" id="col40" style="width:39%;"></div>
+          <div class="col col-xs-2" xid="col37" style="border-bottom-style:solid;border-bottom-color:#FF80C0;"> 
+            <div component="$model/UI2/system/components/fragment/list/listRow4" xid="listRow41" data-bind="component:{name:'$model/UI2/system/components/fragment/list/listRow4'}"> 
+              <div component="$model/UI2/system/components/justep/list/list" class="x-list" style="margin: 5px;" xid="list2" data-bind="component:{name:'$model/UI2/system/components/justep/list/list'}"> 
+                <ul class="x-list-template hide" xid="listTemplateUl2"> 
+                  <li class="list-row-bottom" xid="li2"> 
+                    <div component="$model/UI2/system/components/justep/row/row" class="x-row" xid="row13" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}"> 
+                      <div xid="col44"> 
+                        <span style="margin-left:5px;color:#FF8040;font-size:large;" xid="span21">已有查询：</span>
+                      </div>  
+                      <div class="x-col" xid="col45"> 
+                        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-primary" xid="button21" style="width:94px;font-size:x-large;height:40px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button21Click" data-config="{&#34;icon&#34;:&#34;icon-chevron-right&#34;}"> 
+                          <i xid="i21" class="icon-chevron-right"></i>  
+                          <span xid="span27"></span>
+                        </a>
+                      </div> 
+                    </div>  
+                    <div component="$model/UI2/system/components/justep/row/row" class="x-row" xid="row14" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}"> 
+                      <div xid="col46"> 
+                        <span style="font-size:large;margin-left:5px;color:#FF8040;" xid="span22">添加门店：</span>
+                      </div>  
+                      <div class="x-col" xid="col47"> 
+                        <a component="$model/UI2/system/components/justep/button/button" class="btn x-red" xid="button12" style="width:94px;font-size:x-large;height:40px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button12Click" data-config="{&#34;icon&#34;:&#34;icon-android-add&#34;}"> 
+                          <i xid="i12" class="icon-android-add"></i>  
+                          <span xid="span13"></span>
+                        </a>
+                      </div> 
+                    </div>  
+                    <div component="$model/UI2/system/components/justep/row/row" class="x-row" xid="row15" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}"> 
+                      <div xid="col48"> 
+                        <span style="font-size:large;margin-left:5px;color:#FF8040;width:71px;" xid="span23">删除门店：</span>
+                      </div>  
+                      <div class="x-col" xid="col49"> 
+                        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-warning" xid="button20" style="width:94px;font-size:x-large;height:40px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-config="{&#34;icon&#34;:&#34;icon-android-remove&#34;}"> 
+                          <i xid="i20" class="icon-android-remove"></i>  
+                          <span xid="span25"></span>
+                        </a>
+                      </div> 
+                    </div>  
+                    <div component="$model/UI2/system/components/justep/row/row" class="x-row" xid="row17" data-bind="component:{name:'$model/UI2/system/components/justep/row/row'}"> 
+                      <div xid="col52"> 
+                        <span style="font-size:large;margin-left:5px;color:#FF8040;" xid="span26">提交后台：</span>
+                      </div>  
+                      <div class="x-col" xid="col53"> 
+                        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-success" xid="button15" style="width:94px;font-size:x-large;height:40px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:button15Click" data-config="{&#34;label&#34;:&#34;提交&#34;}"> 
+                          <i xid="i15"></i>  
+                          <span xid="span16">提交</span>
+                        </a>
+                      </div> 
+                    </div>
+                  </li> 
+                </ul> 
+              </div> 
+            </div>
+          </div>  
+          <div class="col col-xs-1" xid="col39" id="col39"></div> 
+        </div>
+        <div component="$model/UI2/system/components/bootstrap/row/row" class="row" xid="row6" style="height:59px;" data-bind="component:{name:'$model/UI2/system/components/bootstrap/row/row'}"> 
+          <div class="col col-xs-3" xid="col21"></div> 
+        </div> 
+      </div>
+    </div>  
+    <div class="x-panel-bottom" xid="bottom1" component="$model/UI2/system/components/justep/panel/child" data-bind="component:{name:'$model/UI2/system/components/justep/panel/child'}"></div>
+    <style>.x-panel.p6a805c95602e440494b3a25e4b78a309-iosstatusbar >.x-panel-top {height: 48px;}.x-panel.p6a805c95602e440494b3a25e4b78a309-iosstatusbar >.x-panel-content { top: 48px;bottom: nullpx;}.x-panel.p6a805c95602e440494b3a25e4b78a309-iosstatusbar >.x-panel-bottom {height: nullpx;}.iosstatusbar .x-panel.p6a805c95602e440494b3a25e4b78a309-iosstatusbar >.x-panel-top {height: 68px;}.iosstatusbar .x-panel.p6a805c95602e440494b3a25e4b78a309-iosstatusbar >.x-panel-content { top: 68px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p6a805c95602e440494b3a25e4b78a309-iosstatusbar >.x-panel-top {height: 48px;}.iosstatusbar .x-panel .x-panel-content .x-panel.p6a805c95602e440494b3a25e4b78a309-iosstatusbar >.x-panel-content {top: 48px;}</style>
+  </div>
+</div>

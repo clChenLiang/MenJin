@@ -1,0 +1,29 @@
+/**
+	@name Menu
+	@component $UI/system/components/justep/menu/menu
+	@extends ViewComponent
+	@extendurl $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 上下文菜单
+*/
+
+/**
+	@name Menu#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name Menu#addItem
+	@function
+	@description 创建项
+	@param {Object} config 创建项的选项, 可以参考Button的选项
+	@return {Object} Button 
+*/
+
+/**
+	@name Menu#addDivider
+	@function
+	@description 创建分隔线
+*/

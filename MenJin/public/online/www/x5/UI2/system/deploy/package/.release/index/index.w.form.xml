@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" xid="window" class="window" sysParam="false" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/button," css="$model/UI2/system/deploy/package/index.css,">  
+  <div component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"/>  
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+    <a class="navbar-brand" bind-text="$model.title"/> 
+  </nav>  
+  <div xid="composeParent" style="padding:54px 8px 54px 8px;margin:0px 0px 0px 0px;"></div>  
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation"> 
+    <div class="navbar-buttons-container"> 
+      <div class="btn-group-single pull-right" style="display:inline-block"> 
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-dialog-back" bind-css="{hide: !$model.hasDownloadBtn.get()}" xid="downloadBtn" style="width:120px;" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:downloadBtnClick" data-config="{&quot;label&quot;:&quot;下载已生成App&quot;}"> 
+          <i xid="i2"/>  
+          <span xid="span2">下载已生成App</span>
+        </a>
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-dialog-back" bind-css="{hide: !$model.hasBackBtn.get()}" xid="backBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:backBtnClick" data-config="{&quot;label&quot;:&quot;上一步&quot;}">
+          <i/>
+          <span>上一步</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-primary btn-dialog-next" bind-css="{hide: !$model.hasNextBtn.get()}" xid="nextBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:nextBtnClick" data-config="{&quot;label&quot;:&quot;下一步&quot;}">
+          <i/>
+          <span>下一步</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-primary btn-dialog-finish" bind-css="{hide: !$model.hasFinishBtn.get()}" xid="finishBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:finishBtnClick" data-config="{&quot;label&quot;:&quot;完成&quot;}">
+          <i/>
+          <span>完成</span>
+        </a>  
+        <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default btn-dialog-cancel" bind-css="{hide: !$model.hasCancelBtn.get()}" xid="cancelBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:cancelBtnClick" data-config="{&quot;label&quot;:&quot;取消&quot;}">
+          <i/>
+          <span>取消</span>
+        </a> 
+      </div> 
+    </div> 
+  </nav> 
+</div>

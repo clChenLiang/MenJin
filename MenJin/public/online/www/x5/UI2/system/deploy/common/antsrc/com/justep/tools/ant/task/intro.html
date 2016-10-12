@@ -1,0 +1,35 @@
+<div id='introPage' style="visibility: hidden; z-index: 99999; position: absolute !important; top: 0; bottom: 0; width: 100%; font-size: 0;">
+	<style type="text/css">
+		#introPage iframe{
+			width: 1px;
+			min-width: 100%;
+			*width: 100%;
+		}
+	</style>
+	<iframe src="./intro.html" scrolling="no" style="border: 0; height: 100%;"></iframe>
+</div>
+<script>
+	var introPageElement = document.getElementById('introPage');
+	var applicationHostElement = document.getElementById('applicationHost');
+	try {
+		if (localStorage && localStorage.getItem('introPage') == null) {
+			introPageElement.style.visibility = "visible";
+		} else {
+			introPageElement.style.display = "none";
+			if(introPageElement.parentNode != null){
+				introPageElement.parentNode.removeChild(introPageElement);
+			}
+		}
+	} catch (e) {
+	} finally {
+		if (window.addEventListener && introPageElement.style.visibility === "visible") {
+			window.addEventListener('message', function(event) {
+				if (event.data === "introPageClose") {
+					if(introPageElement && introPageElement.parentNode != null){
+						introPageElement.parentNode.removeChild(introPageElement);
+					}
+				}
+			});
+		}
+	};
+</script>

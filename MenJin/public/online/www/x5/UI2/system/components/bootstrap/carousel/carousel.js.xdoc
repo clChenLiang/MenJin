@@ -1,0 +1,86 @@
+/**
+	@name Carousel
+	@component $UI/system/components/bootstrap/carousel/carousel
+	@extends ViewComponent
+	@extendurl $UI/system/lib/base/viewComponent
+	@description Carousel组件, 循环展示
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+	@name Carousel#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name Carousel#auto
+	@attribute 
+	@type boolean
+	@description 自动播放
+*/
+
+/**
+	@name Carousel#interval
+	@attribute 
+	@type integer
+	@description 自动播放的间隔,单位是秒
+*/
+
+/**
+ @name Carousel#add
+ @function
+ @param {String} html 添加的html片断
+ @description 添加页
+*/
+
+/**
+ @name Carousel#to
+ @function
+ @param {integer|String} xidOrIdx panel的xid或者索引
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到指定的content
+*/
+
+/**
+ @name Carousel#next
+ @function
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到下一个content
+*/
+
+/**
+ @name Carousel#prev
+ @function
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到前一个content
+*/
+
+/**
+ @name Carousel#to
+ @operation
+ @see Carousel#to
+ @param {String} xid
+ @description 切换到指定的content
+ @returns {void}
+*/
+
+/**
+ @name Carousel#next
+ @operation
+ @see Carousel#next
+ @description 切换到下一个content
+ @returns {void}
+*/
+
+/**
+ @name Carousel#prev
+ @operation
+ @see Carousel#prev
+ @description 切换到前一个content
+ @returns {void}
+*/

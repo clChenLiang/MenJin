@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/HEHE/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/WeX5/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/hehehehe/build/C6BB2A6EB8100001D31F1E104869EE60/build/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/hehehehe/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/hello/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/ibeaconn/build/C6BB2D2432C00001AF541F7E11008320/build/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/ibeaconn/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/templates/advanced/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/templates/normal/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/third/build/C6BB4063DAB000012A3917F81C601259/build/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/third/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/外卖/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/我的外卖/build/C6B8524BD3D0000161E51FE01138140B/build/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/我的外卖/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/model/Native/综合演示/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/tools/adt-sdk/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/tools/cordova/node_modules/cordova-lib/src/plugman/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/WeX5/tools/cordova/node_modules/cordova-lib/templates/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/public/online/platforms" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="echart node_modules" level="project" />
+  </component>
+</module>

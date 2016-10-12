@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xbl="http://www.w3.org/ns/xbl" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xblcompliexblns="http://www.w3.org/ns/xbl" component="$model/UI2/system/components/justep/window/window" extends="$UI/system/deploy/common/waittingDialog.w" sysParam="false" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/radio,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"/>  
+  <div xmlns="" xid="infoDiv" style="padding:8px"> 
+    <label xid="info" class="x-label">正在执行，请稍候......</label>  
+    <div xid="div7"> 
+      <label xid="detail" style="font-size:small;color:#0080FF;cursor:pointer;" data-bind="event:{click:$model._callModelFn.bind($model, 'detailClick')}">详细信息</label> 
+    </div> 
+  </div>  
+  <div xmlns="" xid="logDiv" style="display:none"> 
+    <div xid="iframeDiv" style="height:100%;"/>  
+    <div xid="useServerDiv" style="padding-left:8px"> 
+      <span component="$model/UI2/system/components/justep/button/radio" class="x-radio" xid="logTypeRadio1" name="logType" label="日志" checked="true" data-config="{&quot;checked&quot;:true,&quot;disabled&quot;:false,&quot;label&quot;:&quot;日志&quot;,&quot;name&quot;:&quot;logType&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/radio'}" data-events="onChange:logTypeRadioChange"> 
+        <input type="radio" name="logType"/>  
+        <label>日志</label> 
+      </span>  
+      <span component="$model/UI2/system/components/justep/button/radio" class="x-radio" xid="logTypeRadio2" name="logType" label="打包服务器日志" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;打包服务器日志&quot;,&quot;name&quot;:&quot;logType&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/radio'}" data-events="onChange:logTypeRadioChange"> 
+        <input type="radio" name="logType"/>  
+        <label>打包服务器日志</label> 
+      </span> 
+    </div> 
+  </div> 
+</div>

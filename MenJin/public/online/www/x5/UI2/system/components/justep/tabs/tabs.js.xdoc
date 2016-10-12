@@ -1,0 +1,61 @@
+/**
+	@name Tabs
+	@component $UI/system/components/justep/tabs/tabs
+	@extends ViewComponent
+	@extendurl $UI/system/lib/base/viewComponent
+	@description 页签
+	@model UI2
+*/	
+
+/**
+	@name Tabs#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name Tabs#onBeforeSelect
+	@event
+	@description <b>[回调型事件]</b>当切换tab前触发
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"tab" : tab的jquery对象,
+		"cancel" : 取消切换， 默认为false
+	}
+	</xmp>
+*/
+
+/**
+	@name Tabs#onSelect
+	@event
+	@description <b>[回调型事件]</b>当切换tab完触发
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"tab" : tab的jquery对象
+	}
+	</xmp>
+*/
+
+/**
+	@name Tabs#setActiveTab
+	@function
+	@description 激活页签
+	@param {Object} 目标页签的xid或者dom节点
+*/
+
+/**
+ @name Tabs#setActiveTab
+ @operation
+ @see Tabs#setActiveTab
+ @param {String} tab的xid
+ @description 切换到指定的tab
+ @returns {void}
+*/
+

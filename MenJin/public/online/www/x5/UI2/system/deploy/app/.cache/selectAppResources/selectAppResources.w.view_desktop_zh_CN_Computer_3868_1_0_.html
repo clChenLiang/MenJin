@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" class="window" sysParam="false" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/textarea/textarea,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/data/data,$model/UI2/system/components/justep/input/input,">
+  <script xmlns="">window.__justep.__ResourceEngine.loadCss([{url:'/$v3868_1_0_$lzh_CN$sdesktop$d/UI2/system/deploy/app/selectAppResources.css', include:'$model/UI2/system/deploy/app/selectAppResources.css'}]);</script>  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"/>  
+  <div xmlns="" xid="serverDiv"> 
+    <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelInput1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+      <label class="x-label" xid="label2">服务地址：</label>  
+      <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit" xid="serverURL" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;例：http://ip:port，不设置则为本地&quot;}"/> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="labelInput3" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+      <label class="x-label" xid="label6">首页：</label>  
+      <input component="$model/UI2/system/components/justep/input/input" class="form-control x-edit" xid="indexURL" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;例：/webPath/UI2/resName/index.w 或 /index.html&quot;}"/> 
+    </div>  
+    <label xid="label1" class="x-label" style="width:100%;">选择需要打包的资源：</label> 
+  </div>  
+  <textarea xmlns="" class="form-control x-edit" component="$model/UI2/system/components/justep/textarea/textarea" xid="uiResDirs" readonly="true" data-bind="component:{name:'$model/UI2/system/components/justep/textarea/textarea'}"/>  
+  <div xmlns="" xid="uiResDirsTree" style="overflow-y:auto;visibility:hidden;"/> 
+</div>

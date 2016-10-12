@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" class="window" sysParam="false" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/button/checkbox,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/justep/input/input,">  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"/>  
+  <div xmlns="" xid="div1" style="padding:8px"> 
+    <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="androidCheckbox" checked="true" data-config="{&quot;checked&quot;:true,&quot;disabled&quot;:false}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}"> 
+      <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></input>  
+      <label xmlns:xhtml="http://www.w3.org/1999/xhtml"></label> 
+    </span>  
+    <img src="@justepContextPath@/$v3868_1_0_$lzh_CN$sdesktop$d/UI2/system/deploy/package/img/android.png" alt="" xid="androidImage" style="cursor:pointer" data-bind="event:{click:$model._callModelFn.bind($model, 'androidImageClick')}"/>  
+    <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="iosCheckbox" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}"> 
+      <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></input>  
+      <label xmlns:xhtml="http://www.w3.org/1999/xhtml"></label> 
+    </span>  
+    <img src="@justepContextPath@/$v3868_1_0_$lzh_CN$sdesktop$d/UI2/system/deploy/package/img/apple.png" alt="" xid="iosImage" style="cursor:pointer" data-bind="event:{click:$model._callModelFn.bind($model, 'iosImageClick')}"/>  
+    <div xid="div2" style="padding-top:32px"> 
+      <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="compileUI" label="重新编译使用到的UI资源。如果未选择打包资源，此选项无效" checked="true" data-config="{&quot;checked&quot;:true,&quot;disabled&quot;:false,&quot;label&quot;:&quot;重新编译使用到的UI资源。如果未选择打包资源，此选项无效&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}"> 
+        <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></input>  
+        <label xmlns:xhtml="http://www.w3.org/1999/xhtml">重新编译使用到的UI资源。如果未选择打包资源，此选项无效</label> 
+      </span> 
+    </div>  
+    <div xid="div3" style="padding-top:8px"> 
+      <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="useAppBuilderServer" label="使用应用打包服务器生成本地应用。通过服务方式可以使用自定义的扩展插件和生成可发布的应用包。如果选择资源加密、源码模式或自定义插件必须用服务器打包模式" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;使用应用打包服务器生成本地应用。通过服务方式可以使用自定义的扩展插件和生成可发布的应用包。如果选择资源加密、源码模式或自定义插件必须用服务器打包模式&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}" data-events="onChange:useAppBuilderServerChange"> 
+        <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></input>  
+        <label xmlns:xhtml="http://www.w3.org/1999/xhtml">使用应用打包服务器生成本地应用。通过服务方式可以使用自定义的扩展插件和生成可发布的应用包。如果选择资源加密、源码模式或自定义插件必须用服务器打包模式</label> 
+      </span> 
+    </div>  
+    <div xid="appBuilderServerDiv" style="padding-top:8px;display:none"> 
+      <span component="$model/UI2/system/components/justep/button/checkbox" class="x-checkbox" xid="releaseMode" label="发布模式。用于打最终对外发布包，执行性能更优，不支持Chrome/Safari调试；如需开发调试请去掉本选项" checked="true" data-config="{&quot;checked&quot;:true,&quot;disabled&quot;:false,&quot;label&quot;:&quot;发布模式。用于打最终对外发布包，执行性能更优，不支持Chrome/Safari调试；如需开发调试请去掉本选项&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/checkbox'}"> 
+        <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="checkbox"></input>  
+        <label xmlns:xhtml="http://www.w3.org/1999/xhtml">发布模式。用于打最终对外发布包，执行性能更优，不支持Chrome/Safari调试；如需开发调试请去掉本选项</label> 
+      </span>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20" xid="appBuilderServerInput" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+        <label class="x-label" xid="label2">应用打包服务器：</label>  
+        <div class="x-edit" xid="div4"> 
+          <div class="input-group" xid="inputGroup1"> 
+            <input type="text" class="form-control" component="$model/UI2/system/components/justep/input/input" xid="appBuilderServer" data-bind="component:{name:'$model/UI2/system/components/justep/input/input'}" data-config="{&quot;placeHolder&quot;:&quot;例：/app-builder 或 http://ip:port/app-builder&quot;}"/>  
+            <div class="input-group-btn" xid="div5"> 
+              <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default" xid="testServerButton" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:testServerButtonClick" data-config="{&quot;label&quot;:&quot;连接测试&quot;}"> 
+                <i xid="i1"/>  
+                <span xid="span1">连接测试</span> 
+              </a> 
+            </div> 
+          </div> 
+        </div> 
+      </div>  
+      <div xid="div6" style="height:81px;"> 
+        <label xid="label5" class="x-label">小提示：/app-builder表示使用内置服务。windows版本可生成android应用，mac os版本可生成android和ios应用</label> 
+      </div> 
+    </div> 
+  </div> 
+</div>

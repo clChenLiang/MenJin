@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.justep.x5.hello1204" version="0.0.2">  
+  <name>online</name>  
+  <description>Justep X5 移动客户端</description>  
+  <author email="x5@justep.com" href="http://www.justep.com">北京起步科技有限公司（Justep）</author>  
+  <content src="http://10.22.182.185:3000/x5/UI2/hello1204/guanli.w"/>  
+  <access origin="*"/>  
+  <access origin="sms:*" launch-external="yes"/>  
+  <access origin="tel:*" launch-external="yes"/>  
+  <preference name="SplashScreen" value="screen"/>  
+  <preference name="SplashScreenDelay" value="10000"/>  
+  <preference name="BackgroundColor" value="0xffffffff"/> 
+</widget>

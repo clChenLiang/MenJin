@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" component="$model/UI2/system/components/justep/window/window" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/labelEdit/labelEdit,$model/UI2/system/components/justep/select/select,$model/UI2/system/components/justep/model/model,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/controlGroup/controlGroup,$model/UI2/system/components/justep/button/radio,$model/UI2/system/components/justep/data/data,">
+  <script xmlns="">window.__justep.__ResourceEngine.loadCss([{url:'/$v3868_1_0_$lzh_CN$sdesktop$d/UI2/system/components/designerCommon/propEdtorPages/icon/selectIcon.css', include:'$model/UI2/system/components/designerCommon/propEdtorPages/icon/selectIcon.css'}]);</script>  
+  <div xmlns="" component="$model/UI2/system/components/justep/model/model" xid="model" style="display:none" data-bind="component:{name:'$model/UI2/system/components/justep/model/model'}" data-events="onLoad:modelLoad"/>  
+  <div xmlns="" component="$model/UI2/system/components/justep/controlGroup/controlGroup" class="x-control-group" xid="controlGroup1" data-bind="component:{name:'$model/UI2/system/components/justep/controlGroup/controlGroup'}"> 
+    <div class="x-control-group-title">选择Icon</div>  
+    <div component="$model/UI2/system/components/justep/controlGroup/controlGroup" class="x-control-group" xid="controlGroup2" data-bind="component:{name:'$model/UI2/system/components/justep/controlGroup/controlGroup'}"> 
+      <span component="$model/UI2/system/components/justep/button/radio" class="x-radio" xid="facefont" name="iconType" label="Facefont模式" value="1" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;Facefont模式&quot;,&quot;name&quot;:&quot;iconType&quot;,&quot;value&quot;:&quot;1&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/radio'}" data-events="onChange:facefontChanged"> 
+        <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="radio" name="iconType" value="1"></input>  
+        <label xmlns:xhtml="http://www.w3.org/1999/xhtml">Facefont模式</label> 
+      </span>  
+      <span component="$model/UI2/system/components/justep/button/radio" class="x-radio" xid="image" name="iconType" label="Image模式" value="2" data-config="{&quot;checked&quot;:false,&quot;disabled&quot;:false,&quot;label&quot;:&quot;Image模式&quot;,&quot;name&quot;:&quot;iconType&quot;,&quot;value&quot;:&quot;2&quot;}" data-bind="component:{name:'$model/UI2/system/components/justep/button/radio'}" data-events="onChange:imageChanged"> 
+        <input xmlns:xhtml="http://www.w3.org/1999/xhtml" type="radio" name="iconType" value="2"></input>  
+        <label xmlns:xhtml="http://www.w3.org/1999/xhtml">Image模式</label> 
+      </span> 
+    </div>  
+    <div component="$model/UI2/system/components/justep/controlGroup/controlGroup" class="x-control-group" xid="imgGroup" data-bind="component:{name:'$model/UI2/system/components/justep/controlGroup/controlGroup'},css:{hide: !isImgIcon.get()}"> 
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit" xid="labelInput1" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+        <label class="x-label" xid="label1">可用时图标：</label>  
+        <div class="x-edit" xid="div1"> 
+          <input xid="inputImg" placeHolder="格式：$UI/system/components/justep/button/demo/chart32.png" class="form-control" data-bind="value:imgIcon"/> 
+        </div> 
+      </div>  
+      <div component="$model/UI2/system/components/justep/labelEdit/labelEdit" class="x-label-edit" xid="labelInput2" data-bind="component:{name:'$model/UI2/system/components/justep/labelEdit/labelEdit'}"> 
+        <label class="x-label" xid="label2">禁用时图标：</label>  
+        <div class="x-edit" xid="div2"> 
+          <input xid="inputFacefont" placeHolder="格式：$UI/system/components/justep/button/demo/chart32.png" class="form-control" data-bind="value:disimgIcon"/> 
+        </div> 
+      </div> 
+    </div>  
+    <div xid="facefontGroup" data-bind="css:{hide: isImgIcon.get()}"> 
+      <div xid="div3" class="container"> 
+        <select component="$model/UI2/system/components/justep/select/select" class="form-control" xid="selectFile" style="margin-bottom:10px;" data-bind="component:{name:'$model/UI2/system/components/justep/select/select'},options:files.datas,optionsValue:'filePath',optionsText:'name',optionsAfterRender:$model.__justep__.selectOptionsAfterRender.bind($model,$element)" data-events="onChange:selectFileChange" data-config="{&quot;optionsAutoLoad&quot;:false}"/> 
+      </div> 
+    </div> 
+  </div> 
+</div>
